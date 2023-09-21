@@ -61,7 +61,10 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps.
+`bundle install`
+`rails db:reset`
+`rails db:migrate`
+`rails s`
 
 ### Prerequisites <a name="prerequisites">
 
