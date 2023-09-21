@@ -1,0 +1,33 @@
+Arguments: 
+  /home/zven/.asdf/installs/nodejs/18.16.1/bin/node /home/zven/.asdf/installs/nodejs/18.16.1/bin/yarn add --dev stylelint
+
+PATH: 
+  /home/zven/.asdf/plugins/nodejs/shims:/home/zven/.asdf/installs/nodejs/18.16.1/bin:/home/zven/.asdf/shims:/home/zven/.asdf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Users/nicob/bin:/mnt/c/Program Files/Git/mingw64/bin:/mnt/c/Program Files/Git/usr/local/bin:/mnt/c/Program Files/Git/usr/bin:/mnt/c/Program Files/Git/usr/bin:/mnt/c/Program Files/Git/mingw64/bin:/mnt/c/Program Files/Git/usr/bin:/mnt/c/Users/nicob/bin:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/ProgramData/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Microsoft SQL Server/120/Tools/Binn:/mnt/c/Users/nicob/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/nicob/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/adb:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Git/cmd:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Users/nicob/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/nicob/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/nicob/.dotnet/tools:/mnt/c/Users/nicob/AppData/Roaming/npm:/mnt/c/Users/nicob/AppData/Local/Programs/Python/Python310:/mnt/c/Users/nicob/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/nicob/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/nicob/AppData/Local/Programs/Python/Python310:/mnt/c/Program Files/Git/usr/bin/vendor_perl:/mnt/c/Program Files/Git/usr/bin/core_perl:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/mnt/c/Users/nicob/Documents/Microverse/MODULE_5/week_1/BlogApp/node_modules/@babel/helpers/lib/helpers/wrapRegExp.js'
+
+npm manifest: 
+  {
+    "devDependencies": {
+      "stylelint": "^13.13.1",
+      "stylelint-config-standard": "^21.0.0",
+      "stylelint-csstree-validator": "^1.9.0",
+      "stylelint-scss": "^3.21.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
