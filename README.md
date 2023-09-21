@@ -51,20 +51,14 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Realtime weather info**
-- **Search for any city in the world**
-- **Responsive design**
+- **Create the data model**
+- **Migrate all files to the schema**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-`bundle install`
-`rails db:reset`
-`rails db:migrate`
-`rails s`
 
 ### Prerequisites <a name="prerequisites">
 
@@ -80,16 +74,21 @@ Clone this repository to your desired folder:
 Example commands:
 
 ```sh
-  mkdir weather-app
-  cd weather-app
+  mkdir BlogApp
+  cd BlogApp
   git clone https://github.com/Zven94/BlogApp.git
 ```
 
 ### Install <a name="install">
 
 ```
-npm install
-npm install jest-dom
+bundle install
+```
+```
+rails db:reset
+```
+```
+rails db:migrate
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -99,7 +98,7 @@ npm install jest-dom
 Initialize it with:
 
 ```
-npm start
+rails s
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -118,7 +117,8 @@ npm start
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add more weather info**
+- [ ] **WOrk on Authentication**
+- [ ] **Work with Devise**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
