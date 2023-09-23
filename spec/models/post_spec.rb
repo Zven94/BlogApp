@@ -47,17 +47,16 @@ RSpec.describe Post, type: :model do
     it 'updates user post_counter after create' do
       user = User.create(name: 'testuser')
       # expect(user.post_counter).to eq(0)
-    
+
       post = Post.new(author: user, title: 'My Post', comment_counter: 0, likes_counter: 0)
       post.save
-    
+
       expect(user.post_counter).to eq(1)
     end
 
     it 'returns the most recent comments, limited to 5' do
       user = User.create(name: 'testuser')
       post = Post.create(author: user, title: 'My Post', text: 'Some text', comment_counter: 0, likes_counter: 0)
-      
 
       newest_comment = post.comments.create(author: user, text: 'This is the newest comment', created_at: Time.now)
       middle_comment1 = post.comments.create(author: user, text: 'This is a middle comment 1', created_at: 1.day.ago)
@@ -67,7 +66,8 @@ RSpec.describe Post, type: :model do
 
       return_most_recent_comment = post.return_most_recent_comment
 
-      expect(return_most_recent_comment).to eq([newest_comment, middle_comment1, middle_comment2, middle_comment3, older_comment])
+      expect(return_most_recent_comment).to eq([newest_comment, middle_comment1, middle_comment2, middle_comment3,
+                                                older_comment])
     end
   end
 end

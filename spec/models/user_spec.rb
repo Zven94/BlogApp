@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
   it 'validates the post counter must be a positive number' do
     user = User.new(post_counter: -5)
     expect(user).to_not be_valid
-    expect(user.errors[:post_counter]).to include("must be greater than or equal to 0")
+    expect(user.errors[:post_counter]).to include('must be greater than or equal to 0')
   end
   it 'validates the recent post method' do
     user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')

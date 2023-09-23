@@ -20,7 +20,7 @@ RSpec.describe Comment, type: :model do
 
       expect(post.comment_counter).to eq(0)
 
-      Comment.create(author: user, post: post, text: 'Some text')
+      Comment.create(author: user, post:, text: 'Some text')
 
       post.reload
       expect(post.comment_counter).to eq(1)
