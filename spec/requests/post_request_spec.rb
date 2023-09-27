@@ -17,4 +17,18 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  it 'Render the correct template' do
+    user = User.create(name: 'Example')
+    post = user.posts.create(title: 'Title Example')
+    get user_post_path(user, post)
+    expect(response).to render_template(:show)
+  end
+
+  it 'Show the page for a single post' do
+    user = User.create(name: 'Example')
+    post = user.posts.create(title: 'Title Example')
+    get user_post_path(user, post)
+    expect(response.body).to include('show a posts')
+  end
 end
