@@ -23,7 +23,20 @@
     <h3>Posts: </h3>
     <ul>
       <% @user.recent_posts.each do |post| %>
-        <li><%= post.title %></li>
+        <li class='li-content'>
+          <%= link_to post.title, user_post_path(post.author_id, post.id) %>
+          <div class='counter-content'>
+            <%= post.text%>
+          </div>
+          <div class='counter-content'>
+            <div>
+              <h4>Comments: <%= post.comment_counter%></h4>
+            </div>
+            <div>
+              <h4>Likes: <%= post.likes_counter%></h4>              
+            </div>
+          <div>
+        </li>
       <% end %>
     </ul>
   </div>
