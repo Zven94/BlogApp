@@ -1,1 +1,39 @@
-<h1>show all the users</h1>
+<div class = 'users-tab'>  
+  <div class = 'users-header'>
+    <div class = 'users-row-info'>
+      <div class = 'img-container'>
+          <div class="inner-border">
+            <img src="<%= @user.photo %>" alt="" width="100" height="100">
+          </div>
+        </div>
+      <h1><%= @user.name %></h1>
+    </div>
+    <div>
+      <h3>
+        Posts: <%= @user.post_counter %>
+      </h3>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Bio: <%= @user.bio %>
+    </h3>
+  </div>
+  <div>
+    <h3>Posts: </h3>
+    <ul>
+      <% @user.recent_posts.each do |post| %>
+        <li><%= post.title %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class= 'users-buttons'>
+    <button>
+      <%= link_to 'See all posts', user_posts_path(@user) %>
+    </button>
+    <h3>
+      <%= link_to 'Back', users_path %>
+      <i class="fa-sharp fa-light fa-left"></i>
+    </h3>
+  </div>
+</div>

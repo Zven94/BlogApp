@@ -13,6 +13,8 @@ class User < ApplicationRecord
   # methods
 
   def recent_posts
+    return 'No posts yet' if post_counter.zero?
+
     posts.order(created_at: :desc).limit(3)
   end
 end

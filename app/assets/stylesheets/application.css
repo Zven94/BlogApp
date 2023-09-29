@@ -1,15 +1,153 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* * {
+  border: 1px solid green;
+} */
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.users-tab {
+  box-sizing: border-box;
+  width: 70%;
+  border-radius: 7px;
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.40);
+  padding: 0.5rem;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.users-row {
+  width: 100%;
+  display: flex;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.40);
+}
+
+.users-row-info {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+li {
+  list-style-type: none;
+  margin: 0.6rem;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-container img {
+  /* width: 100%;
+  height: 100%; */
+  display: block;
+  border-radius: 15px;
+}
+
+.img-container::before {
+  content: "";
+  position: absolute;
+  width: 5.2rem;
+  height: 5.2rem;
+  top: 0.5rem; 
+  left: 0.5rem; 
+  right: 5%; 
+  bottom: 5%; 
+  /* border: 2px solid transparent; */
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.65);
+  z-index: 1;
+}
+
+.users-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comments-li {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.users-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 7px;
+  box-shadow: 0px 0px 2px 2px rgba(109, 165, 218, 0.4);
+}
+
+.posts-index {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+a {
+   /* link visited none */
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  /* box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.40); */
+  background-color: #70a1e9;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
