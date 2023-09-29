@@ -46,6 +46,9 @@
     </div>
     <div class= 'users-buttons'>
       <div>
+        <button>
+          <%= link_to 'New Post', new_user_post_path(@posts.first.author) %>
+        </button>
        </div>
        <button>
          <%= link_to 'Back', user_path(@posts.first.author) %>
