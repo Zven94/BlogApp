@@ -7,7 +7,7 @@
               <img src="<%= @posts.first.author.photo %>" alt="" width="100" height="100">
             </div>
       <%= link_to @posts.first.author.name, user_path(@posts.first.author) %>
-      </div>  
+      </div>
         <div>
           <h3>Posts: <%= @posts.first.author.post_counter %></h3>
         </div>
@@ -18,37 +18,40 @@
         <div class="posts-title">
           <h3>
             <%# author id: <%= post.author_id %>
-            <%= link_to post.title, user_post_path(post.author_id, post.id) %> 
+            <%= link_to post.title, user_post_path(post.author_id, post.id) %>
           </h3>
+          <p><%= post.text %></p>
         </div>
         <div class="posts-comment">
           <h4>
-            <% if post.comments.empty? %> 
+            <% if post.comments.empty? %>
               No comments yet
             <% else %>
               <ul>
-                <% post.comments.each do |comment| %>
+                <% post.return_most_recent_comment.each do |comment| %>
               </ul>
               <li>
                 <%= comment.author.name %>:
                 <%= comment.text %>
-              </li>              
+              </li>
                 <% end %>
             <% end %>
           </h4>
         </div>
         <div>
           <h4> comments: <%= post.comment_counter %> likes: <%= post.likes_counter %></h4>
-        </div>  
+        </div>
       </div>
     <% end %>
     </div>
-
+    <div class= 'users-buttons'>
+      <div>
+        <button>
+          <%= link_to 'New Post', new_user_post_path(@posts.first.author) %>
+        </button>
+       </div>
+       <button>
+         <%= link_to 'Back', user_path(@posts.first.author) %>
+       </button>
+     </div>
   </div>
-  <div class= 'users-buttons'>
-    <button>
-      <%= link_to 'Back', user_path(@posts.first.author) %>
-      <i class="fa-sharp fa-light fa-left"></i>
-    </button>
-  </div>
-</div>
