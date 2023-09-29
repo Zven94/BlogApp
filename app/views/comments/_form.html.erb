@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div>
 <%= form_with(model: [@post.author.id, @post, @comment], url: user_post_comments_path(@post.author.id, @post), method: :post) do |form| %>
   <div class="">
      <%= form.text_area :text, class: 'text-area' %>
