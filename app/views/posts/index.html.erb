@@ -1,1 +1,57 @@
-<h1>show a list of posts</h1>
+<div class = 'users-tab'>
+  <h1>All Posts</h1>
+  <div>
+    <div class='users-header'>
+      <div class = 'img-container'>
+            <div class="inner-border">
+              <img src="<%= @posts.first.author.photo %>" alt="" width="100" height="100">
+            </div>
+      <%= link_to @posts.first.author.name, user_path(@posts.first.author) %>
+      </div>
+        <div>
+          <h3>Posts: <%= @posts.first.author.post_counter %></h3>
+        </div>
+    </div>
+    <div class='posts-list'>
+    <% @posts.each do |post| %>
+      <div class="posts-index">
+        <div class="posts-title">
+          <h3>
+            <%# author id: <%= post.author_id %>
+            <%= link_to post.title, user_post_path(post.author_id, post.id) %>
+          </h3>
+          <p><%= post.text %></p>
+        </div>
+        <div class="posts-comment">
+          <h4>
+            <% if post.comments.empty? %>
+              No comments yet
+            <% else %>
+              <ul>
+                <% post.return_most_recent_comment.each do |comment| %>
+              </ul>
+              <li>
+                <%= comment.author.name %>:
+                <%= comment.text %>
+              </li>
+                <% end %>
+            <% end %>
+          </h4>
+        </div>
+        <div>
+          <h4> comments: <%= post.comment_counter %> likes: <%= post.likes_counter %></h4>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    <div class= 'users-buttons'>
+      <div>
+        <button>
+          <%= link_to 'New Post', new_user_post_path(@posts.first.author) %>
+        </button>
+       </div>
+       <button>
+         <%= link_to 'Back', user_path(@posts.first.author) %>
+       </button>
+     </div>
+  </div>

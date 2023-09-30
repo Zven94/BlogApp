@@ -1,0 +1,21 @@
+<div class="new-post-tab">
+<%= form_with(model: [@user, @post], url: user_posts_path(@user), method: :post, class: "new-post-form") do |form| %>
+  <div>
+    <h2>Create New Post for <%= @user.name %></h2>
+    <div class="form-title">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-text">
+      <%= form.label :text %>
+      <%= form.text_area :text, class: "form-control" %>
+    </div>
+    <div>
+      <%= form.submit 'Create Post', class: 'custom-button' %>
+      <button>
+        <%= link_to 'Back', user_posts_path(@user) %>
+          </button>
+    </div>
+  </div>
+<% end %>
+</div>

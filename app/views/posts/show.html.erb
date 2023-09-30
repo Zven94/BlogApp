@@ -1,1 +1,36 @@
-<h1>show a posts</h1>
+<div class = 'users-tab'>
+  <div class = 'users-header'>
+    <h3>
+      <%= @post.title %> by <%= @post.author.name %> 
+    </h3>
+    <h4> Comments: <%= @post.comment_counter %> / Likes: <%= @post.likes_counter %></h4>
+  </div>
+  <h4>
+    <%= @post.text %>
+  </h4>
+  <div>
+    <div>
+      <% if @post.comments.empty? %> 
+        No comments yet
+      <% else %>
+        <ul>
+          <% @post.comments.each do |comment| %>
+        </ul>
+        <li class='comments-li'>
+          <img src=<%= comment.author.photo %> alt="" width="25" height="25">
+          <h4> <%= comment.author.name %>: </h4>
+          <h4> <%= comment.text %> </h4>
+        </li>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-center likes">
+      <%= render 'comments/form' %>
+    </div>
+  </div>
+  <div class= 'users-buttons'>
+    <button>
+      <%= link_to 'Back', user_posts_path() %>
+    </button>
+  </div>
+</div>
