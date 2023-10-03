@@ -29,6 +29,6 @@ RSpec.describe 'Posts', type: :request do
     user = User.create(name: 'Example')
     post = user.posts.create(title: 'Title Example')
     get user_post_path(user, post)
-    expect(response.body).to include('show a posts')
+    expect(response.body).to include('Title Example')
   end
 end

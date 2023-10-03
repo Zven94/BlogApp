@@ -12,9 +12,9 @@ RSpec.describe User, type: :model do
     expect(user.errors[:post_counter]).to include('must be greater than or equal to 0')
   end
   it 'validates the recent post method' do
-    user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+    user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', post_counter: 5)
     user.save
     recent_posts = user.recent_posts
     expect(recent_posts.count).to eq(0)
-  end
+  end  
 end
