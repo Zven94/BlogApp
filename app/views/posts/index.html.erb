@@ -2,22 +2,26 @@
   <h1>All Posts</h1>
   <div>
     <div class='users-header'>
-      <div class = 'img-container'>
-            <div class="inner-border">
-              <img src="<%= @posts.first.author.photo %>" alt="" width="100" height="100">
-            </div>
-      <%= link_to @posts.first.author.name, user_path(@posts.first.author) %>
-      </div>
+      <% if @posts.any? %>
+        <div class = 'img-container'>
+          <div class="inner-border">
+            <img src="<%= @posts.first.author.photo %>" alt="" width="100" height="100">
+          </div>
+          <%= link_to @posts.first.author.name, user_path(@posts.first.author) %>
         <div>
           <h3>Posts: <%= @posts.first.author.post_counter %></h3>
         </div>
+          <% else %>
+          <h3>No posts yet</h3>
+        </div>
+      <% end %>
     </div>
     <div class='posts-list'>
     <% @posts.each do |post| %>
       <div class="posts-index">
         <div class="posts-title">
           <h3>
-            <%# author id: <%= post.author_id %>
+            author id: <%= post.author_id %>
             <%= link_to post.title, user_post_path(post.author_id, post.id) %>
           </h3>
           <p><%= post.text %></p>
@@ -29,11 +33,11 @@
             <% else %>
               <ul>
                 <% post.return_most_recent_comment.each do |comment| %>
-              </ul>
               <li>
                 <%= comment.author.name %>:
                 <%= comment.text %>
               </li>
+              </ul>
                 <% end %>
             <% end %>
           </h4>
@@ -46,12 +50,12 @@
     </div>
     <div class= 'users-buttons'>
       <div>
-        <button>
-          <%= link_to 'New Post', new_user_post_path(@posts.first.author) %>
-        </button>
-       </div>
-       <button>
-         <%= link_to 'Back', user_path(@posts.first.author) %>
-       </button>
-     </div>
+          <button>
+            <%= link_to 'New Post', new_user_post_path(@user) %>
+          </button>
+      </div>
+      <button>
+          <%= link_to 'Back', user_path(@user) %>
+      </button>
+    </div>
   </div>
