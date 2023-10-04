@@ -34,7 +34,7 @@ RSpec.describe 'Users', type: :request do
     it 'Show the page for create user' do
       user = User.create(name: 'Ejemplo')
       get "/users/#{user.id}"
-      expect(response.body).to include("#{user.name}")
+      expect(response.body).to include(user.name.to_s)
     end
   end
 end

@@ -61,13 +61,8 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-
-
   config.include Capybara::DSL
   config.before(:each, type: :system) do
     driven_by :selenium, using: :headless_chrome # Puedes elegir el controlador de prueba adecuado aquí
   end
-
-
-  
 end

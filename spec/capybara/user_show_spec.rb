@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'User Show Page', type: :feature do
-
   before do
     @user1 = User.create(name: 'User_1', photo: 'url_1', bio: 'Bio_1', post_counter: 3)
     @user2 = User.create(name: 'User_2', photo: 'url_2', bio: 'Bio_2', post_counter: 5)
@@ -13,8 +12,8 @@ RSpec.describe 'User Show Page', type: :feature do
   end
 
   it 'displays the user\'s profile information' do
-    expect(page).to have_content("#{@user1.name}")
-    expect(page).to have_content("#{@user1.bio}")
+    expect(page).to have_content(@user1.name.to_s)
+    expect(page).to have_content(@user1.bio.to_s)
   end
 
   it 'displays a list of the user\'s posts' do
@@ -26,7 +25,7 @@ RSpec.describe 'User Show Page', type: :feature do
   it 'links to individual post pages' do
     visit user_path(@user1)
     click_link 'Post_1'
-    expect(page).to have_content("#{@user1.name}")
-    expect(page).to have_content("#{@post1.title}")
+    expect(page).to have_content(@user1.name.to_s)
+    expect(page).to have_content(@post1.title.to_s)
   end
 end

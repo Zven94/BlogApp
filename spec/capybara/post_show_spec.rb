@@ -13,8 +13,8 @@ RSpec.feature 'Post Show', type: :feature do
 
     expect(page).to have_content(@post.title)
     expect(page).to have_content(@post.author.name)
-    expect(page).to have_content("Comments: 2")
-    expect(page).to have_content("Likes: 0")
+    expect(page).to have_content('Comments: 2')
+    expect(page).to have_content('Likes: 0')
     expect(page).to have_content(@post.text)
     expect(page).to have_css('.comments-li', count: 2)
     expect(page).to have_content(@comment1.author.name)
