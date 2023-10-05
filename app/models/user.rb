@@ -1,6 +1,10 @@
 class User < ApplicationRecord
-  has_many :author_id, foreign_key: 'author_id'
-  has_many :user_id, foreign_key: 'user_id'
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :validatable
+  has_many :authored_posts, class_name: 'Post', foreign_key: 'author_id'
+  has_many :user_posts, class_name: 'Post', foreign_key: 'user_id'
   has_many :posts, foreign_key: 'author_id'
   has_many :comments
   has_many :likes
