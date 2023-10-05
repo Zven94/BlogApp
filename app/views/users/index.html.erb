@@ -1,6 +1,11 @@
 <div class = 'users-tab'>
   <h1>Users</h1>
-  
+  <% if user_signed_in? %>
+    Hi: <%= current_user.name %> id: <%= current_user.id %>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= button_to "Sign in", new_user_session_path %>
+  <% end %>
   <div class = 'users-list'>
     <!-- Your content goes here -->
     <% @users.reverse.each do |user| %>
